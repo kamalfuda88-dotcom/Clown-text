@@ -1,153 +1,153 @@
 <!DOCTYPE html>
-<html lang=”ar” dir=”rtl”>
+<html lang="ar" dir="rtl">
 <head>
-<meta charset=”UTF-8”>
-<meta name=”viewport” content=”width=device-width, initial-scale=1.0”>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>اختبار التوظيف</title>
 <style>
-Body {
-  Background: #3a0d0d;
-  Color: #f5e6d3;
-  Font-family: “Georgia”, “Times New Roman”, serif;
-  Display: flex;
-  Justify-content: center;
-  Align-items: center;
-  Min-height: 90vh;
-  Margin: 0;
-  Padding: 0;
+body {
+  background: #3a0d0d;
+  color: #f5e6d3;
+  font-family: "Georgia", "Times New Roman", serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
-  Max-width: 90%;
-  Width: 400px;
-  Text-align: right;
-  Background: #2b0909;
-  Border: 8px double #b8860b;
-  Padding: 30px 20px;
-  Box-shadow: 0 0 30px rgba(0,0,0,0.7);
-  Position: relative;
+  max-width: 90%;
+  width: 400px;
+  text-align: right;
+  background: #2b0909;
+  border: 8px double #b8860b;
+  padding: 30px 20px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.7);
+  position: relative;
 }
 
 /* زخرفة الستارة العلوية والسفلية */
 .container::before {
-  Content: “🎪”;
-  Font-size: 2rem;
-  Display: block;
-  Text-align: center;
-  Opacity: 0.7;
+  content: "🎪";
+  font-size: 2rem;
+  display: block;
+  text-align: center;
+  opacity: 0.7;
 }
 
 .container::after {
-  Content: “”;
-  Display: block;
-  Height: 4px;
-  Background: repeating-linear-gradient(90deg, #b8860b 0px, #b8860b 4px, transparent 4px, transparent 8px);
-  Margin-top: 20px;
-  Opacity: 0.6;
+  content: "";
+  display: block;
+  height: 4px;
+  background: repeating-linear-gradient(90deg, #b8860b 0px, #b8860b 4px, transparent 4px, transparent 8px);
+  margin-top: 20px;
+  opacity: 0.6;
 }
 
-H2 {
-  Color: #f5e6d3;
-  Font-size: 1.5rem;
-  Text-align: center;
-  Margin-bottom: 20px;
-  Text-shadow: 1px 1px 3px #000;
+h2 {
+  color: #f5e6d3;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px #000;
 }
 
 .step { display: none; }
 .step.active { display: block; }
 
-Textarea {
-  Width: 100%;
-  Background: #4a1515;
-  Color: #f5e6d3;
-  Border: 2px solid #8b6914;
-  Padding: 10px;
-  Margin: 10px 0;
-  Font-family: georgia, serif;
-  Box-sizing: border-box;
-  Outline: none;
+textarea {
+  width: 100%;
+  background: #4a1515;
+  color: #f5e6d3;
+  border: 2px solid #8b6914;
+  padding: 10px;
+  margin: 10px 0;
+  font-family: georgia, serif;
+  box-sizing: border-box;
+  outline: none;
 }
 
-Textarea::placeholder {
-  Color: #c4a882;
-  Opacity: 0.8;
+textarea::placeholder {
+  color: #c4a882;
+  opacity: 0.8;
 }
 
-Button {
-  Background: #8b1a1a;
-  Color: #f5e6d3;
-  Border: 2px solid #b8860b;
-  Padding: 10px 30px;
-  Cursor: pointer;
-  Font-family: georgia, serif;
-  Font-size: 1rem;
-  Margin-top: 10px;
-  Width: 100%;
-  Transition: 0.3s;
+button {
+  background: #8b1a1a;
+  color: #f5e6d3;
+  border: 2px solid #b8860b;
+  padding: 10px 30px;
+  cursor: pointer;
+  font-family: georgia, serif;
+  font-size: 1rem;
+  margin-top: 10px;
+  width: 100%;
+  transition: 0.3s;
 }
 
-Button:hover {
-  Background: #b8860b;
-  Color: #2b0909;
+button:hover {
+  background: #b8860b;
+  color: #2b0909;
 }
 
 #exitIcon {
-  Cursor: pointer;
-  Font-size: 2rem;
-  Display: block;
-  Text-align: center;
-  Margin-top: 20px;
+  cursor: pointer;
+  font-size: 2rem;
+  display: block;
+  text-align: center;
+  margin-top: 20px;
 }
 
 #clownImage {
-  Display: none;
-  Max-width: 100%;
-  Margin-top: 20px;
-  Border: 3px solid #8b6914;
-  Border-radius: 8px;
+  display: none;
+  max-width: 100%;
+  margin-top: 20px;
+  border: 3px solid #8b6914;
+  border-radius: 8px;
 }
 </style>
 </head>
 <body>
-<div class=”container”>
-  <!—الخطوة 1: البداية 
-  <div id=”step1” class=”step active”>
+<div class="container">
+  <!-- الخطوة 1: البداية -->
+  <div id="step1" class="step active">
     <h2>هل تجد نفسك مرحاً؟</h2>
-    <button onclick=”startTest()”>ابدأ الاختبار</button>
+    <button onclick="startTest()">ابدأ الاختبار</button>
   </div>
 
-  <!—الخطوة 2: مهارات الكوميديا اللفظية 
-  <div id=”step2” class=”step”>
+  <!-- الخطوة 2: مهارات الكوميديا اللفظية -->
+  <div id="step2" class="step">
     <h2>أولاً: مهارات الكوميديا اللفظية</h2>
-    <textarea id=”joke” rows=”4” placeholder=”اكتب نكتة واحدة هنا"></textarea>
+    <textarea id="joke" rows="4" placeholder="اكتب نكتة واحدة هنا"></textarea>
     <br>
-    <button onclick=”submitJoke()”>إرسال</button>
+    <button onclick="submitJoke()">إرسال</button>
   </div>
 
-  <!—الخطوة 3: الرفض 
-  <div id=”step3” class=”step”>
+  <!-- الخطوة 3: الرفض -->
+  <div id="step3" class="step">
     <p>لقد تم تقييم النكتة.</p>
     <p>أنت لست مضحكاً بما يكفي.</p>
     <p>لقد فشلت في الاختبار.</p>
-    <div id=”exitIcon” onclick=”showClown()”>🚪</div>
-    <img id=”clownImage” src=https://cdn-icons-png.flaticon.com/512/7422/7422817.png alt=”مهرج يبكي">
+    <div id="exitIcon" onclick="showClown()">🚪</div>
+    <img id="clownImage" src="https://cdn-icons-png.flaticon.com/512/7422/7422817.png" alt="مهرج يبكي">
   </div>
 </div>
 
 <script>
-Function startTest() {
-  Document.getElementById(‘step1’).classList.remove(‘active’);
-  Document.getElementById(‘step2’).classList.add(‘active’);
+function startTest() {
+  document.getElementById('step1').classList.remove('active');
+  document.getElementById('step2').classList.add('active');
 }
 
-Function submitJoke() {
-  Document.getElementById(‘step2’).classList.remove(‘active’);
-  Document.getElementById(‘step3’).classList.add(‘active’);
+function submitJoke() {
+  document.getElementById('step2').classList.remove('active');
+  document.getElementById('step3').classList.add('active');
 }
 
-Function showClown() {
-  Document.getElementById(‘clownImage’).style.display = ‘block’;
+function showClown() {
+  document.getElementById('clownImage').style.display = 'block';
 }
 </script>
 </body>
